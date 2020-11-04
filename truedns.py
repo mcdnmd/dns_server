@@ -29,8 +29,7 @@ class ServerRouter:
                     # send request for root_dns_server
                     print(f'Sending udp to {requested_ip}')
                     sock2 = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                    sock2.setsockopt(socket.SOL_SOCKET,
-                                         socket.SO_REUSEADDR, 1)
+                    sock2.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
                     sock2.sendto(request, (requested_ip, 53))
                     buffer = sock2.recv(65535)
                     sock2.close()
@@ -45,7 +44,6 @@ class ServerRouter:
                         break
                     requested_ip = domains[0]
                 break
-
 
 
 def main():
