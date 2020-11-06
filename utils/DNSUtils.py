@@ -46,6 +46,3 @@ def get_ipv4_addr(data):
     for byte in data:
         result.append(str(byte))
     return '.'.join(result)
-
-def get_ipv6_addr(data):
-    pass

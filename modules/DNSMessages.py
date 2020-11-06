@@ -1,5 +1,5 @@
 from utils.DNSUtils import get_authority_domain, read_name_from_bytes, \
-    get_ipv4_addr, get_ipv6_addr, get_name_length
+    get_ipv4_addr, get_name_length
 
 """
     DNS message format

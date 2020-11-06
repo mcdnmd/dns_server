@@ -27,15 +27,13 @@ class Router:
     def run(self):
         while True:
             data, client_addr = self.server.recvfrom(65535)
-            t = threading.Thread(target=self._serve, args=(data,
-                                                           client_addr))
+            t = threading.Thread(target=self._serve, args=(data, client_addr))
             self.threads.append(t)
             t.start()
 
     def _serve(self, data, addr):
-        print(f'Get data from {addr}')
-        print(data)
         if data:
+            print(f'Get data from {addr}')
             response = self.DNSLogic.get_dns_info(data)
             with self.lock:
                 self.server.sendto(response, addr)
